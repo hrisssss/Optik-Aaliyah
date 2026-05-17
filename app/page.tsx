@@ -154,10 +154,10 @@ export default function LandingPage() {
         try {
           // PERBAIKAN 2: Menggunakan Environment Variable untuk URL Hugging Face
           // Pastikan kamu tidak menaruh tanda slash (/) di akhir URL di Vercel env kamu
-          const response = await fetch(`${process.env.NEXT_PUBLIC_HF_API_URL}/predict?glasses_index=${glassesIndex}`, {
-            method: 'POST',
-            body: formData,
-          });
+const response = await fetch(`${process.env.NEXT_PUBLIC_HF_API_URL}/predict?glasses_index=${glassesIndex}`, {
+  method: 'POST',
+  body: formData,
+});
 
           if (!response.ok) {
             const errData = await response.json();
