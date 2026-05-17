@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { db, auth } from "../lib/firebase"; 
-import { collection, query, limit, onSnapshot, doc, setDoc, CollectionReference, DocumentData } from "firebase/firestore";
+// PERBAIKAN 1: Menambahkan addDoc ke dalam import
+import { collection, query, limit, onSnapshot, doc, setDoc, addDoc, CollectionReference, DocumentData } from "firebase/firestore";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, User } from "firebase/auth";
 
 const ADMIN_EMAIL = "admin@optikaaliyah.com"; 
@@ -151,8 +152,9 @@ export default function LandingPage() {
         formData.append("file", blob, "capture.jpg");
 
         try {
-          // HIT API FASTAPI PYTHON TEMENMU DI SINI
-          const response = await fetch(`http://10.218.20.180:8000/predict?glasses_index=${glassesIndex}`, {
+          // PERBAIKAN 2: Menggunakan Environment Variable untuk URL Hugging Face
+          // Pastikan kamu tidak menaruh tanda slash (/) di akhir URL di Vercel env kamu
+          const response = await fetch(`${process.env.NEXT_PUBLIC_HF_API_URL}/predict?glasses_index=${glassesIndex}`, {
             method: 'POST',
             body: formData,
           });
@@ -641,10 +643,4 @@ export default function LandingPage() {
 
     </main>
   );
-}
-
-function addDoc(arg0: CollectionReference<DocumentData, DocumentData>, arg1: {
-  userEmail: string | null; faceShape: any; recommendedModel: string; createdAt: string; purchasedItem: string; // Kosong, nanti diisi kalau dia klik pesan WA
-}) {
-  throw new Error("Function not implemented.");
 }
