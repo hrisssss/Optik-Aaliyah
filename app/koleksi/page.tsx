@@ -214,10 +214,6 @@ const buyViaWhatsApp = async (namaBarang: string) => {
             <Link href="/" className="text-sm font-semibold tracking-wide text-zinc-500 hover:text-zinc-900 transition-colors uppercase">Beranda</Link>
             <Link href="/koleksi" className="text-sm font-semibold tracking-wide text-zinc-500 hover:text-zinc-900 transition-colors uppercase">Katalog</Link>
             
-            {/* TAMBAHAN MENU ADMIN DESKTOP */}
-            {isAdmin && (
-              <Link href="/admin" className="text-sm font-black tracking-wide text-red-600 hover:text-red-800 transition-colors uppercase">Admin Panel</Link>
-            )}
 
             {user ? (
               <div className="flex items-center gap-6">

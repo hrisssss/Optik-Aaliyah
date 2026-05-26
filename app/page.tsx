@@ -16,52 +16,52 @@ const GLASSES_MODELS = [
   { 
     index: 0, 
     name: "Classic Square", 
-    image: "https://api.iconify.design/mdi:glasses.svg?color=%2318181b" 
+    image: "https://images.novelship.com/product/burberry_classic__square_alloy_optical_glasses_tre_0_74517.jpeg?fit=fill&bg=FFFFFF&trim=color&q=75&w=1200&h=1200&pad=80&fm=webp&auto=compress" 
   },
   { 
     index: 1, 
     name: "Round Vintage", 
-    image: "https://api.iconify.design/ph:glasses.svg?color=%2318181b" 
+    image: "https://lh5.googleusercontent.com/proxy/FroDyVtksu2OIB9rAcNtrb8y8mNmNtvkXDMYixbRyByzcqD3KvXWAEGvu5aLvhaEKOIc1xkP7mKSVt_0TtK8cmIIi6Lj-jgpqY4ZJ2O0oaSwSk-BPsxTCFkTC7XsxDwpu5q2gFfAPsY" 
   }, 
   { 
     index: 2, 
     name: "Aviator Pilot", 
-    image: "https://api.iconify.design/ph:sunglasses.svg?color=%2318181b" 
+    image: "https://www.beautasteyewear.com/wp-content/uploads/2025/07/PA25034-7-scaled.jpg" 
   },
   { 
     index: 3, 
     name: "Cat Eye Elegant", 
-    image: "https://api.iconify.design/icon-park-outline:glasses-one.svg?color=%2318181b" 
+    image: "https://media.goapp.co.id/135216864426056/image/catalog/productfield/139494015817288.jpg" 
   },
   { 
     index: 4, 
     name: "Oval Minimalist", 
-    image: "https://api.iconify.design/tabler:glasses.svg?color=%2318181b" 
+    image: "https://heykama.com/wp-content/uploads/2025/03/ginee_20250314114513875_6862375057.jpeg" 
   },
   { 
     index: 5, 
     name: "Wayfarer Bold", 
-    image: "https://api.iconify.design/mdi:sunglasses.svg?color=%2318181b" 
+    image: "https://elizabeth.co.id/wp-content/uploads/2026/04/0803-4633-02-84_0c.png" 
   },
   { 
     index: 6, 
     name: "Rectangle Slim", 
-    image: "https://api.iconify.design/lucide:glasses.svg?color=%2318181b" 
+    image: "https://cdn.ruparupa.io/fit-in/400x400/filters:format(webp)/filters:quality(90)/ruparupa-com/image/upload/Products/10495248_1.jpg" 
   },
   { 
     index: 7, 
     name: "Browline / Clubmaster", 
-    image: "https://api.iconify.design/ri:glasses-line.svg?color=%2318181b" 
+    image: "https://down-id.img.susercontent.com/file/id-11134201-7qukx-ljdqz6i3zrj548" 
   },
   { 
     index: 8, 
     name: "Geometric Hexagon", 
-    image: "https://api.iconify.design/mingcute:glasses-line.svg?color=%2318181b" 
+    image: "https://www.kacamatamalang.com/wp-content/uploads/2025/09/DSC_0188-300x300.jpg" 
   },
   { 
     index: 9, 
     name: "Oversized Butterfly", 
-    image: "https://api.iconify.design/ep:glasses.svg?color=%2318181b" 
+    image: "https://down-id.img.susercontent.com/file/id-11134207-7r98z-lve8no3l6hzzc3" 
   }
 ];
 
@@ -279,10 +279,7 @@ const response = await fetch(`${process.env.NEXT_PUBLIC_HF_API_URL}/predict?glas
             <Link href="/" className="text-sm font-semibold tracking-wide text-zinc-500 hover:text-zinc-900 transition-colors uppercase">Beranda</Link>
             <Link href="/koleksi" className="text-sm font-semibold tracking-wide text-zinc-500 hover:text-zinc-900 transition-colors uppercase">Katalog</Link>
             
-            {/* INI MENU KHUSUS ADMIN */}
-            {isAdmin && (
-              <Link href="/admin" className="text-sm font-black tracking-wide text-red-600 hover:text-red-800 transition-colors uppercase">Admin Panel</Link>
-            )}
+            
 
             {user ? (
               <div className="flex items-center gap-6">
